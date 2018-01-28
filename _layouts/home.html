@@ -5,5 +5,7 @@ layout: default
 {{ content }}
 
 {% for post in site.posts %}
+{% unless post.categories contains "drafts" %}
 {% include post_preview.html %}
+{% endunless %}
 {% endfor %}
