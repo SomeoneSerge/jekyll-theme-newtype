@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="container">
+    <div class="row">
+        <div class="three columns">
+        </div>
+        <div class="nine columns posts">
+            {% for post in site.posts %}
+            <div class="row">
+                <h3><a class=""
+                       href="{{ post.url | absolute_url }}">
+                    {{ post.title }}
+                </a></h3>
+                <span class="meta">{{ post.date | date_to_string }}</span>
+                <p>
+                    {{ post.excerpt }}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<hr/>
+
+{% include footer.html %}
