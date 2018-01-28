@@ -19,15 +19,13 @@
         {% for link in site.social_links %}
         <div class="one column" >
             <a href="{{ link.url }}">
-                {% if link.pic %}
-                <img style="width: 2em;" src="{{ link.pic | absolute_url }}" />
+                {% if link.ico %}
+                <img style="width: 2em;" src="{{ link.ico | absolute_url }}" />
                 {% else %}
-                <img style="width: 2em;" src="{%link /assets/bullet.png %}" />
+                <img style="width: 2em;" src="{%link /assets/bullet.svg %}" />
                 {% endif %}
             </a>
         </div>
         {% endfor %}
     </div>
 </div>
-
-<hr/>

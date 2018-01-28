@@ -2,11 +2,12 @@ title: NEWTYPE
 description: |
   Another NEWTYPE-themed Jekyll Site
 theme: jekyll-theme-newtype
-base_url: http://localhost:4000/
+base_url: ""
+url: "http://127.0.0.1"
 social_links:
   -
     url: https://twitter.com/newkozlukov
-    pic: /assets/social-twitter.png
+    ico: /assets/social-twitter.png
   -
     url: https://github.com/newkozlukov
-    pic: /assets/social-github.svg
+    ico: /assets/social-github.svg
