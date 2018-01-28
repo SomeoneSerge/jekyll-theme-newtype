@@ -1,21 +1,22 @@
 <div class="container">
     <header class="header">
-        <h1 class="header-title">{{ site.title}}</h1>
         <div class="row">
             <div class="four columns">
+                <img src="{{ "/icon.png" | absolute_url }}" />
             </div>
             <div class="eight columns">
-                <p>{{ site.description }}</p>
+                <h1 class="header-title">{{ site.title}}</h1>
+                <h4>{{ site.description }}</h4>
             </div>
         </div>
-        <div class="row">
-            <div class="four columns" >
+        <div class="value-props row">
+            <div class="four columns value-prop" >
                 {% if site.twitter %}
                 <a href="https://twitter.com/{{ site.twitter }}">
                     <img src="{% link /assets/social-twitter.png %}"
                          alt="twitter"
-                         with="32px"
-                    />
+                         class="value-img"
+                         with="32px" />
                 </a>
                 {% endif %}
             </div>
