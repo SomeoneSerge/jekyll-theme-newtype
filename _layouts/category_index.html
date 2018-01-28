@@ -6,6 +6,8 @@ layout: page
   {% assign category_name = page.category_name %}
 {% endif %}
 
+{{ content }}
+
 {% for post in site.categories[category_name] %}
 {% include post_preview.html %}
 {% endfor %}
