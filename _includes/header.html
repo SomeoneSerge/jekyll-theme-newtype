@@ -1,31 +1,33 @@
-<div class="container">
-    <header class="header">
-        <div class="row">
+<div class="container header">
+    <div class="row">
+        <header>
             <div class="four columns">
-                <img src="{{ "/icon.png" | absolute_url }}" />
+                <a href="{{ site.base_url }}">
+                    <img src="{{ "/icon.png" | absolute_url }}" />
+                </a>
             </div>
             <div class="eight columns">
-                <h1 class="header-title">{{ site.title}}</h1>
+                <a href="{{ site.base_url }}">
+                    <h1 class="header-title">{{ site.title}}</h1>
+                </a>
                 <h4>{{ site.description }}</h4>
             </div>
-        </div>
-        <div class="value-props row">
-            <div class="four columns value-prop" >
-                {% if site.twitter %}
-                <a href="https://twitter.com/{{ site.twitter }}">
-                    <img src="{% link /assets/social-twitter.png %}"
-                         alt="twitter"
-                         class="value-img"
-                         with="32px" />
-                </a>
+        </header>
+    </div>
+    <div class="row" >
+        <div class="four columns" ><p></p></div>
+        {% for link in site.social_links %}
+        <div class="one column" >
+            <a href="{{ link.url }}">
+                {% if link.pic %}
+                <img style="width: 2em;" src="{{ link.pic | absolute_url }}" />
+                {% else %}
+                <img style="width: 2em;" src="{%link /assets/bullet.png %}" />
                 {% endif %}
-            </div>
-            <div class="four columns" >
-            </div>
-            <div class="four columns" >
-            </div>
+            </a>
         </div>
-    </header>
+        {% endfor %}
+    </div>
 </div>
 
 <hr/>

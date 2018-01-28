@@ -6,6 +6,18 @@
     <body>
         {% include header.html %}
 
-        {{ content }}
+        <div class="container">
+            <div class="row" >
+                <div class="two columns">
+                    {% include sidebar.html %}
+                </div>
+                <div class="eight columns">
+                    {{ content }}
+                </div>
+                <div class="two columns">
+                    <p></p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
