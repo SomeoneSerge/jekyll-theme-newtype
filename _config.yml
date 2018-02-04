@@ -4,10 +4,11 @@ description: |
 theme: jekyll-theme-newtype
 base_url: ""
 url: "http://127.0.0.1"
+email: "abc@efg.xyz"
 social_links:
   -
     url: https://twitter.com/newkozlukov
     ico: /assets/social-twitter.png
   -
-    url: https://github.com/newkozlukov
+    url: https://github.com/newkozlukov/jekyll-theme-newtype
     ico: /assets/social-github.svg

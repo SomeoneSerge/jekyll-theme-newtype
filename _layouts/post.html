@@ -2,4 +2,27 @@
 layout: default
 ---
 
+<article>
+    <header class="article-header">
+        <h2>{{ page.title }}</h2>
+        <p><strong>{{ site.email }}</strong></p>
+        <p><strong>{{ page.date | date: '%B %d, %Y' }}</strong></p>
+        {% if page.categories.size > 0 %}
+        <p>
+            Category:
+            {% for cat in page.categories %}
+            {{ cat }}/
+            {% endfor %}
+        </p>
+        {% endif %}
+        {% if page.tags.size > 0 %}
+        <p>Tags:
+            {% for t in page.tags %}
+            {{ t }}
+            {% endfor %}
+        </p>
+        {% endif %}
+    </header>
+
 {{ content }}
+</article>

@@ -22,11 +22,15 @@
 
 @import "syntax";
 
-.header{
+.container {
+    display: grid;
+}
+
+.header {
     margin-top: 4em;
 }
 
-.header-icon{
+.header-icon {
     max-height: 12em;
     border-radius: 50%;
     margin-left: auto;
@@ -34,7 +38,12 @@
     display: block;
 }
 
-.navbar > li{
+.navbar > li {
     list-style-type: none;
     font-size: 14pt;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 4em;
 }
