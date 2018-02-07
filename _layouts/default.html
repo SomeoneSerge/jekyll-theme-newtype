@@ -2,61 +2,79 @@
 
 <html>
     {% include head.html %}
+    <body class="site-container">
+        <div class="header-right" ></div>
+        <a class="site-title"
+           href="{{ site.url }}">
+            {{ site.title }}
+        </a>
 
-    <body>
-        <div class="container">
-            {% include header.html %}
-            <hr/>
+        <header class="site-description" >
+            {{ site.description }}
+        </header>
 
-            <div class="row" >
-                <div class="two columns">
-                    {% include sidebar.html %}
-                </div>
-                <div class="eight columns">
-                    {{ content }}
-                </div>
-                <div class="two columns">
-                    <p/>
-                </div>
-            </div>
-            {% if site.disqus and layout.commentable %}
-            <div class="row" >
-                <div class="two columns">
-                    <p/>
-                </div>
-                <div class="eight columns" id="disqus_thread">
-                </div>
-                <script>
+        <a href="{{ site.url }}"
+           class="site-logo"">
+            <img src="/logo.png" />
+        </a>
 
-                 /**
-                  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                 /*
-                    var disqus_config = function () {
-                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                    };
-                  */
-                 (function() { // DON'T EDIT BELOW THIS LINE
-                     var d = document, s = d.createElement('script');
-                     s.src = 'https://{{ site.disqus }}.disqus.com/embed.js';
-                     s.setAttribute('data-timestamp', +new Date());
-                     (d.head || d.body).appendChild(s);
-                 })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                <div class="two columns">
-                    <p/>
-                </div>
-            </div>
-            {% endif %}
-        </div>
+        <section class="site-contacts">
+            {% for link in site.social_links %}
+            <a href="{{ link.url }}">
+                {% if link.ico %}
+                <img style="width: 2em;"
+                     src="{{ link.ico | absolute_url }}" />
+                {% else %}
+                <img style="width: 2em;"
+                     src="{%link /assets/bullet.svg %}" />
+                {% endif %}
+            </a>
+            {% endfor %}
+        </section>
 
-        <hr/>
+        <nav class="site-navigation">
+            {% include navigation.html %}
+        </nav>
 
-        {% include footer.html %}
+        <section class="site-content">
+            {{ content }}
+        </section>
+
+        <section class="site-comments" id="disqus_thread">
+        </section>
+
+        {% if site.disqus and layout.commentable %}
+        <script>
+         /** * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT
+            THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM
+            OR CMS. * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
+            https://disqus.com/admin/universalcode/#configuration-variables*/
+         var disqus_config = function () {
+             // Replace PAGE_URL with your page's canonical URL variable
+             this.page.url = {{ site.url }};
+             // Replace PAGE_IDENTIFIER with your page's
+             // unique identifier variable
+             this.page.identifier = {{ site.disqus }};
+         };
+         (function() { // DON'T EDIT BELOW THIS LINE
+             var d = document, s = d.createElement('script');
+             s.src = 'https://{{ site.disqus }}.disqus.com/embed.js';
+             s.setAttribute('data-timestamp', +new Date());
+             (d.head || d.body).appendChild(s); })();
+        </script>
+        <noscript>Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+        {% endif %}
+
+        <footer class="site-footer">
+            {% include footer.html %}
+        </footer>
+
         {% if layout.commentable %}
-        <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js" async></script>
+        <script id="dsq-count-scr"
+                src="//{{ site.disqus }}.disqus.com/count.js"
+                async></script>
         {% endif %}
     </body>
 </html>
