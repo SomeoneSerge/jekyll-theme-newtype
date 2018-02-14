@@ -1,0 +1,66 @@
+@font-face {
+    font-family: "Computer Modern";
+    src: url(/assets/fonts/cmunss.otf)
+}
+
+@font-face {
+    font-family: "Computer Modern";
+    src: url(/assets/fonts/cmunsx.otf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Computer Modern";
+    src: url(/assets/fonts/cmunsi.otf);
+    font-style: italic, oblique;
+}
+@font-face {
+    font-family: "Computer Modern";
+    src: url(/assets/fonts/cmunbxo.otf);
+    font-weight: bold;
+    font-style: italic, oblique;
+}
+
+$title-color: black;
+$text-color: black;
+$title-font: "CMU Serif";
+$text-font: "CMU Serif";
+$base-fontsize: 14pt;
+$nav-bgcolor: black;
+$nav-fgcolor: white;
+
+body {
+    font-family: $text-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $title-color;
+}
+
+a p span {
+    font-size: $base-fontsize;
+    text-color: $text-color;
+}
+
+h1 { font-size: $base-fontsize * 1.8; }
+h2 { font-size: $base-fontsize * 1.5; }
+h3 { font-size: $base-fontsize * 1.4; }
+h4 { font-size: $base-fontsize * 1.3; }
+h5 { font-size: $base-fontsize * 1.2; }
+h6 { font-size: $base-fontsize * 1.1; }
+
+.site-navigation {
+    background-color: $nav-bgcolor;
+    color: $nav-fgcolor;
+}
+
+.site-navigation > * {
+    color: $nav-fgcolor;
+    font-weight: bold;
+    font-size: $base-fontsize;
+}
+
+.site-title {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $title-color;
+}
