@@ -2,4 +2,10 @@
 layout: default
 ---
 
+<article>
+    <header class="article-header">
+        <h2>{{ page.title }}</h2>
+        <p><strong>{{ page.date | date: '%B %d, %Y' }}</strong></p>
+    </header>
 {{ content }}
+</article>

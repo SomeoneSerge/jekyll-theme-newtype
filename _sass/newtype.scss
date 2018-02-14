@@ -26,6 +26,8 @@
 
 .site-content {
     grid-area: content;
+    display: flex;
+    flex-direction: column;
     max-width: 100%;
 }
 
@@ -66,18 +68,16 @@
     .site-container {
         display: grid;
         justify-items: stretch;
-        grid-template-columns: 300px minmax(320px, auto);
+        grid-template-columns: auto 50mm 160mm auto;
         grid-template-rows: minmax(2rem, min-content) minmax(2rem, min-content) 2rem 2rem  auto  min-content 8rem;
         grid-template-areas:
-            " site-logo        site-title    "
-            " site-logo     site-description "
-            " .                contacts      "
-            " navigation      navigation     "
-            " content           content      "
-            " comments         comments      "
-            " footer            footer       ";
-        margin-left: 20%;
-        margin-right: 20%;
+            " margin-left site-logo        site-title    margin-right "
+            " margin-left site-logo     site-description margin-right "
+            " margin-left .                contacts      margin-right "
+            " margin-left navigation      navigation     margin-right "
+            " margin-left content           content      margin-right "
+            " margin-left comments         comments      margin-right "
+            " margin-left footer            footer       margin-right ";
     }
 
     .site-logo {
