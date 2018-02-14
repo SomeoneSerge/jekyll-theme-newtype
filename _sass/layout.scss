@@ -1,0 +1,163 @@
+
+$page-width: 210mm;
+$logo-width: 70mm;
+$title-width: $page-width - $logo-width;
+
+.site-logo {
+    grid-area: site-logo;
+}
+
+.site-title {
+    grid-area: site-title;
+}
+
+.site-description {
+    grid-area: site-description;
+}
+
+.site-contacts {
+    grid-area: contacts;
+}
+
+.site-navigation {
+    grid-area: navigation;
+}
+
+.site-footer {
+    grid-area: footer;
+}
+
+.site-content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.site-comments {
+    grid-area: comments;
+}
+
+@media(min-width: 128px) {
+    .site-container {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        grid-template-columns: minmax(128px, auto);
+        grid-template-rows: minmax(2rem, min-content)
+                            minmax(2rem, min-content)
+                            minmax(2rem, min-content)
+                            minmax(2rem, min-content)
+                            minmax(2rem, min-content)
+                            auto
+                            min-content
+                            minmax(8rem, min-content);
+        grid-template-areas:
+            " site-logo "
+            " site-title    "
+            " site-description "
+            "    contacts      "
+            "   navigation     "
+            "     content      "
+            "    comments      "
+            "     footer       ";
+    }
+
+    .site-logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .site-title {
+        font-size: 22pt;
+    }
+
+    .site-description {
+        text-align: center;
+    }
+}
+
+@media(min-width: 1000px) {
+    .site-container {
+        overflow-y: scroll;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: $logo-width $title-width;
+        grid-template-rows: minmax(2rem, min-content)
+                                minmax(2rem, min-content)
+                                minmax(2rem, min-content)
+                                minmax(2rem, min-content)
+                                minmax(2rem, min-content)
+                                auto
+                                min-content
+                                minmax(8rem, min-content);
+        grid-template-areas:
+            " site-logo        site-title    "
+            " site-logo     site-description "
+            " site-logo        contacts      "
+            " navigation      navigation     "
+            " content           content      "
+            " comments         comments      "
+            " footer            footer       ";
+    }
+
+    .site-logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .site-title {
+        font-size: 45pt;
+    }
+}
+
+.site-logo > img {
+    width: $logo-width;
+    flex-shrink: 0;
+}
+
+.site-title {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.site-description {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.site-navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.site-navigation > * {
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.site-contacts {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: space-between;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+.site-contacts > * {
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}

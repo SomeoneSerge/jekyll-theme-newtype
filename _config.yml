@@ -1,6 +1,7 @@
 title: NEWTYPE
 description: |
-  Another NEWTYPE-themed Jekyll Site
+  Another NEWTYPE-themed Jekyll Site.
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 theme: jekyll-theme-newtype
 base_url: ""
 url: "http://127.0.0.1"
