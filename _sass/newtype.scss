@@ -1,8 +1,3 @@
-/*
-* Based on: https://github.com/whatsnewsaes
-*/
-
-
 @import "syntax";
 
 .site-logo {
@@ -31,42 +26,79 @@
 
 .site-content {
     grid-area: content;
+    max-width: 100%;
 }
 
 .site-comments {
     grid-area: comments;
 }
 
-@media(min-width: 480px) {
+@media(min-width: 128px) {
+    .site-container {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: minmax(128px, auto);
+        grid-template-rows: min-content minmax(2rem, min-content)
+                                        minmax(2rem, min-content) 2rem 2rem
+                                        auto  min-content 8rem;
+        grid-template-areas:
+            " site-logo "
+            " site-title    "
+            " site-description "
+            "    contacts      "
+            "   navigation     "
+            "     content      "
+            "    comments      "
+            "     footer       ";
+    }
+
+    .site-logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .site-description {
+        text-align: center;
+    }
+}
+@media(min-width: 1000px) {
     .site-container {
         display: grid;
         justify-items: stretch;
-        grid-template-columns: min-content minmax(320px, auto);
-        grid-template-rows: minmax(2rem, min-content) 2rem 4rem auto 8rem;
+        grid-template-columns: 20% 300px minmax(320px, auto) 20%;
+        grid-template-rows: minmax(2rem, min-content) minmax(2rem, min-content) 2rem 2rem  auto  min-content 8rem;
         grid-template-areas:
-            " site-logo        site-title    "
-            " site-logo     site-description "
-            " .                contacts      "
-            " .               navigation     "
-            " .                 content      "
-            " .                comments      "
-            " .                 footer       ";
+            " margin-left site-logo        site-title    margin-right "
+            " margin-left site-logo     site-description margin-right "
+            " margin-left .                contacts      margin-right "
+            " margin-left navigation      navigation     margin-right "
+            " margin-left content           content      margin-right "
+            " margin-left comments         comments      margin-right "
+            " margin-left footer            footer       margin-right ";
+    }
+
+    .site-logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 2rem;
     }
 }
 
-.site-logo {
-    display: flex;
-}
-
 .site-logo > img {
-    min-height: 100%;
-    width: auto;
+    max-width: 300px;
+    width: 100%;
+    flex-shrink: 0;
 }
 
 .site-title {
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 42pt;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 50pt;
+    font-size: 8vw;
 }
 
 .site-description {
@@ -97,18 +129,7 @@
     margin-right: 1rem;
 }
 
-
-
-
-.header-icon {
-    max-height: 12em;
-    border-radius: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
 .article-header {
     text-align: center;
-    margin-bottom: 4em;
+    margin-bottom: 4rem;
 }
