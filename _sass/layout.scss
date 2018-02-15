@@ -69,6 +69,10 @@ $title-width: $page-width - $logo-width;
         justify-content: center;
     }
 
+    .site-title {
+        font-size: 38pt;
+    }
+
     .site-description {
         text-align: center;
     }
@@ -103,6 +107,10 @@ $title-width: $page-width - $logo-width;
         flex-direction: column;
         justify-content: center;
     }
+
+    .site-title {
+        font-size: 64pt;
+    }
 }
 
 .site-logo > img {
@@ -113,8 +121,6 @@ $title-width: $page-width - $logo-width;
 .site-title {
     display: flex;
     justify-content: flex-start;
-    font-size: 50pt;
-    font-size: 10vmin;
 }
 
 .site-description {
@@ -124,7 +130,7 @@ $title-width: $page-width - $logo-width;
 
 .site-navigation {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: space-around;
     align-content: center;
     width: 100%;
@@ -139,7 +145,7 @@ $title-width: $page-width - $logo-width;
 
 .site-contacts {
     display: flex;
-    flex-direction: row wrap;
+    flex-flow: row wrap;
     align-items: space-between;
     justify-content: center;
     align-content: center;
