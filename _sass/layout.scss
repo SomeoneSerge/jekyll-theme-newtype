@@ -1,6 +1,6 @@
 
 $page-width: 210mm;
-$logo-width: 70mm;
+$logo-width: 65mm;
 $title-width: $page-width - $logo-width;
 
 .site-logo {
@@ -67,6 +67,12 @@ $title-width: $page-width - $logo-width;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        width: 100%;
+    }
+
+    .site-logo > img {
+        width: 100%;
+        flex-shrink: 0;
     }
 
     .site-title {
@@ -108,13 +114,13 @@ $title-width: $page-width - $logo-width;
     }
 
     .site-title {
-        font-size: 45pt;
+        font-size: 42pt;
     }
-}
 
-.site-logo > img {
-    width: $logo-width;
-    flex-shrink: 0;
+    .site-logo > img {
+        width: $logo-width;
+        flex-shrink: 0;
+    }
 }
 
 .site-title {
