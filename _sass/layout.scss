@@ -121,9 +121,9 @@ $right-margin: 2cm;
         display: grid;
         justify-content: center;
         grid-template-columns: full-columns($page-width, $logo-width, $left-margin, $right-margin);
-        grid-template-rows: minmax(2rem, min-content)
-                                minmax(2rem, min-content)
-                                minmax(2rem, min-content)
+        grid-template-rows: min-content
+                                min-content
+                                min-content
                                 minmax(2rem, min-content)
                                 minmax(2rem, auto)
                                 minmax(8rem, min-content)
@@ -175,8 +175,6 @@ $right-margin: 2cm;
     justify-content: space-evenly;
     align-content: center;
     width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
 }
 
 .site-navigation > * {
