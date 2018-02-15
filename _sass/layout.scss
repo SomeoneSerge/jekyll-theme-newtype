@@ -3,6 +3,7 @@ $page-width: 210mm;
 $logo-width: 65mm;
 $left-margin: 2cm;
 $right-margin: 2cm;
+$logo-title-margin: 1rem;
 
 @function mobile-columns($left-margin, $right-margin) {
     $s1: $left-margin;
@@ -117,6 +118,8 @@ $right-margin: 2cm;
 
 @media(min-width: 1000px) {
     .site-container {
+        margin-top: 0;
+        margin-bottom: 0;
         overflow-y: scroll;
         display: grid;
         justify-content: center;
@@ -146,6 +149,7 @@ $right-margin: 2cm;
 
     .site-title {
         font-size: 42pt;
+        padding-left: $logo-title-margin;
     }
 
     .site-logo > img {
@@ -155,6 +159,11 @@ $right-margin: 2cm;
 
     .site-contacts {
         justify-content: flex-start;
+        padding-left: $logo-title-margin;
+    }
+
+    .site-description {
+        padding-left: $logo-title-margin;
     }
 }
 
