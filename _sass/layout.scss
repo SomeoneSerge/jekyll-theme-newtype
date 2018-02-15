@@ -50,8 +50,8 @@ $title-width: $page-width - $logo-width;
                                   minmax(2rem, min-content)
                                   minmax(2rem, min-content)
                                   minmax(2rem, auto)
-                                  minmax(2rem, auto)
-                                  minmax(8rem, min-content);
+                                  minmax(8rem, min-content)
+                                  minmax(2rem, auto);
         grid-template-areas:
             " site-logo "
             " site-title    "
@@ -59,8 +59,8 @@ $title-width: $page-width - $logo-width;
             "    contacts      "
             "   navigation     "
             "     content      "
-            "    comments      "
-            "     footer       ";
+            "     footer       "
+            "    comments      ";
     }
 
     .site-logo {
@@ -95,16 +95,16 @@ $title-width: $page-width - $logo-width;
                                 minmax(2rem, min-content)
                                 minmax(2rem, min-content)
                                 minmax(2rem, auto)
-                                minmax(2rem, auto)
-                                minmax(8rem, min-content);
+                                minmax(8rem, min-content)
+                                minmax(2rem, auto);
         grid-template-areas:
             " site-logo        site-title    "
             " site-logo     site-description "
             " site-logo        contacts      "
             " navigation      navigation     "
             " content           content      "
-            " comments         comments      "
-            " footer            footer       ";
+            " footer            footer       "
+            " comments         comments      ";
     }
 
     .site-logo {
@@ -168,7 +168,6 @@ $title-width: $page-width - $logo-width;
 }
 
 .site-comments {
-    margin-top: 8rem;
     width: 100%;
     display: block;
 }
