@@ -82,6 +82,10 @@ $title-width: $page-width - $logo-width;
     .site-description {
         text-align: center;
     }
+
+    .site-content {
+        padding: 1rem;
+    }
 }
 
 @media(min-width: 1000px) {
