@@ -2,12 +2,11 @@
 layout: page
 ---
 
-{% if page.category_name %}
-  {% assign category_name = page.category_name %}
-{% endif %}
-
 {{ content }}
 
-{% for post in site.categories[category_name] %}
-{% include post_preview.html %}
+{% for category_name in page.category_list %}
+    <h1>{{ category_name | capitalize }}</h1>
+    {% for post in site.categories[category_name] %}
+    {% include post_preview.html %}
+    {% endfor %}
 {% endfor %}
