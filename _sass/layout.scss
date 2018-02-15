@@ -45,13 +45,13 @@ $title-width: $page-width - $logo-width;
         justify-items: center;
         grid-template-columns: minmax(128px, auto);
         grid-template-rows: minmax(2rem, min-content)
-                            minmax(2rem, min-content)
-                            minmax(2rem, min-content)
-                            minmax(2rem, min-content)
-                            minmax(2rem, min-content)
-                            auto
-                            min-content
-                            minmax(8rem, min-content);
+                                  minmax(2rem, min-content)
+                                  minmax(2rem, min-content)
+                                  minmax(2rem, min-content)
+                                  minmax(2rem, min-content)
+                                  minmax(2rem, auto)
+                                  minmax(2rem, min-content)
+                                  minmax(8rem, min-content);
         grid-template-areas:
             " site-logo "
             " site-title    "
@@ -88,9 +88,8 @@ $title-width: $page-width - $logo-width;
                                 minmax(2rem, min-content)
                                 minmax(2rem, min-content)
                                 minmax(2rem, min-content)
+                                minmax(2rem, auto)
                                 minmax(2rem, min-content)
-                                auto
-                                min-content
                                 minmax(8rem, min-content);
         grid-template-areas:
             " site-logo        site-title    "
