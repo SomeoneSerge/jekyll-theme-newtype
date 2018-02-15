@@ -95,7 +95,7 @@ $title-width: $page-width - $logo-width;
         grid-template-areas:
             " site-logo        site-title    "
             " site-logo     site-description "
-            " .                contacts      "
+            " site-logo        contacts      "
             " navigation      navigation     "
             " content           content      "
             " comments         comments      "
