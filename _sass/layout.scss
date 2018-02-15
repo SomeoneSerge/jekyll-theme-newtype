@@ -44,7 +44,7 @@ $title-width: $page-width - $logo-width;
         justify-content: center;
         justify-items: center;
         grid-template-columns: minmax(128px, auto);
-        grid-template-rows: min-content
+        grid-template-rows: minmax(2rem, min-content)
                             minmax(2rem, min-content)
                             minmax(2rem, min-content)
                             minmax(2rem, min-content)
@@ -70,7 +70,7 @@ $title-width: $page-width - $logo-width;
     }
 
     .site-title {
-        font-size: 38pt;
+        font-size: 22pt;
     }
 
     .site-description {
@@ -84,7 +84,7 @@ $title-width: $page-width - $logo-width;
         display: grid;
         justify-content: center;
         grid-template-columns: $logo-width $title-width;
-        grid-template-rows: min-content
+        grid-template-rows: minmax(2rem, min-content)
                                 minmax(2rem, min-content)
                                 minmax(2rem, min-content)
                                 minmax(2rem, min-content)
@@ -109,7 +109,7 @@ $title-width: $page-width - $logo-width;
     }
 
     .site-title {
-        font-size: 64pt;
+        font-size: 45pt;
     }
 }
 
@@ -119,6 +119,7 @@ $title-width: $page-width - $logo-width;
 }
 
 .site-title {
+    font-weight: bold;
     display: flex;
     justify-content: flex-start;
 }
