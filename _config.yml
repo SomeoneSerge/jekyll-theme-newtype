@@ -13,3 +13,5 @@ social_links:
   -
     url: https://github.com/newkozlukov/jekyll-theme-newtype
     ico: /assets/social-github.svg
+site_icon: "/assets/site_icon.png"
+site_logo: "/assets/site_logo.png"
