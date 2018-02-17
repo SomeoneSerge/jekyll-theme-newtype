@@ -6,18 +6,18 @@ commentable: true
 <article>
     <header class="article-header">
         <h1 class="article-title">
-        {{ page.title | markdownify | lstrip '<p>', | rstrip '</p>' }}
+        {{ page.title | markdownify | remove_first: "<p>" | remove_last: "</p>" }}
         </h1>
         <section class="article-email">
             <strong>{{ site.email }}</strong>
         </section>
         <section class="article-date">
-            {{ page.date | date: '%B %d, %Y' }}
+            {{ page.date | date: "%B %d, %Y" }}
         </section>
         {% if page.categories.size > 0 %}
         <section class="article-category">
             Category:
-            {{ page.categories | join '/' }}
+            {{ page.categories | join: "/" }}
         </section>
         {% endif %}
         {% if page.tags.size > 0 %}
