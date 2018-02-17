@@ -1,7 +1,26 @@
 
 $page-width: 210mm;
 $logo-width: 65mm;
-$title-width: $page-width - $logo-width;
+$left-margin: 2cm;
+$right-margin: 2cm;
+$logo-title-margin: 1rem;
+
+@function mobile-columns($left-margin, $right-margin) {
+    $s1: $left-margin;
+    $s3: $right-margin;
+    // IDK if it'll work when $s1, $s3
+    // are specified in units other than vw
+    $s2: 100vw - $s1 - $s3;
+    @return $s1 $s2 $s3;
+}
+
+@function full-columns($page-width, $logo-width, $left-margin, $right-margin) {
+    $s1: $left-margin;
+    $s2: $logo-width - $left-margin;
+    $s3: $page-width - $s1 - $s2 - $right-margin;
+    $s4: $right-margin;
+    @return $s1 $s2 $s3 $s4;
+}
 
 .site-logo {
     grid-area: site-logo;
@@ -38,13 +57,16 @@ $title-width: $page-width - $logo-width;
     grid-area: comments;
 }
 
-@media(min-width: 128px) {
+@media(max-width: 1000px) {
+    $left-margin: 2vw;
+    $right-margin: 2vw;
+
     .site-container {
         margin: 0;
         display: grid;
         justify-content: center;
         justify-items: center;
-        grid-template-columns: minmax(128px, auto);
+        grid-template-columns: mobile-columns($left-margin, $right-margin);
         grid-template-rows: minmax(2rem, min-content)
                                   minmax(2rem, min-content)
                                   minmax(2rem, min-content)
@@ -54,14 +76,14 @@ $title-width: $page-width - $logo-width;
                                   minmax(8rem, min-content)
                                   minmax(2rem, auto);
         grid-template-areas:
-            " site-logo "
-            " site-title    "
-            " site-description "
-            "    contacts      "
-            "   navigation     "
-            "     content      "
-            "     footer       "
-            "    comments      ";
+            " site-logo           site-logo      site-logo"
+            " site-title         site-title      site-title"
+            " site-description site-description  site-description"
+            " contacts            contacts       contacts"
+            " navigation         navigation      navigation"
+            " left-margin          content       right-margin "
+            " left-margin          footer        right-margin "
+            " left-margin         comments       right-margin ";
     }
 
     .site-logo {
@@ -83,29 +105,40 @@ $title-width: $page-width - $logo-width;
     .site-description {
         text-align: center;
     }
+
+    .site-content {
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+
+    .site-contacts {
+        justify-content: center;
+    }
 }
 
 @media(min-width: 1000px) {
     .site-container {
+        margin-top: 0;
+        margin-bottom: 0;
         overflow-y: scroll;
         display: grid;
         justify-content: center;
-        grid-template-columns: $logo-width $title-width;
-        grid-template-rows: minmax(2rem, min-content)
-                                minmax(2rem, min-content)
-                                minmax(2rem, min-content)
+        grid-template-columns: full-columns($page-width, $logo-width, $left-margin, $right-margin);
+        grid-template-rows: min-content
+                                min-content
+                                min-content
                                 minmax(2rem, min-content)
                                 minmax(2rem, auto)
                                 minmax(8rem, min-content)
                                 minmax(2rem, auto);
         grid-template-areas:
-            " site-logo        site-title    "
-            " site-logo     site-description "
-            " site-logo        contacts      "
-            " navigation      navigation     "
-            " content           content      "
-            " footer            footer       "
-            " comments         comments      ";
+            "  site-logo     site-logo     site-title        site-title    "
+            "  site-logo     site-logo     site-description  site-description "
+            "  site-logo     site-logo     contacts          contacts      "
+            "  navigation    navigation    navigation        navigation   "
+            "  left-margin   content       content           right-margin "
+            "  left-margin   footer        footer            right-margin "
+            "  left-margin   comments      comments          right-margin ";
     }
 
     .site-logo {
@@ -116,11 +149,21 @@ $title-width: $page-width - $logo-width;
 
     .site-title {
         font-size: 42pt;
+        padding-left: $logo-title-margin;
     }
 
     .site-logo > img {
         width: $logo-width;
         flex-shrink: 0;
+    }
+
+    .site-contacts {
+        justify-content: flex-start;
+        padding-left: $logo-title-margin;
+    }
+
+    .site-description {
+        padding-left: $logo-title-margin;
     }
 }
 
@@ -138,11 +181,9 @@ $title-width: $page-width - $logo-width;
 .site-navigation {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-content: center;
     width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
 }
 
 .site-navigation > * {
@@ -154,10 +195,10 @@ $title-width: $page-width - $logo-width;
     display: flex;
     flex-flow: row wrap;
     align-items: space-between;
-    justify-content: center;
     align-content: center;
     width: 100%;
 }
+
 .site-contacts > * {
     text-decoration: none;
     margin-right: 1rem;
