@@ -5,23 +5,25 @@ commentable: true
 
 <article>
     <header class="article-header">
-        <h2>{{ page.title }}</h2>
-        <p><strong>{{ site.email }}</strong></p>
-        <p><strong>{{ page.date | date: '%B %d, %Y' }}</strong></p>
+        <h1 class="article-title">
+        {{ page.title | markdownify | remove_first: "<p>" | remove_last: "</p>" }}
+        </h1>
+        <section class="article-email">
+            <strong>{{ site.email }}</strong>
+        </section>
+        <section class="article-date">
+            {{ page.date | date: "%B %d, %Y" }}
+        </section>
         {% if page.categories.size > 0 %}
-        <p>
+        <section class="article-category">
             Category:
-            {% for cat in page.categories %}
-            {{ cat }}/
-            {% endfor %}
-        </p>
+            {{ page.categories | join: "/" }}
+        </section>
         {% endif %}
         {% if page.tags.size > 0 %}
-        <p>Tags:
-            {% for t in page.tags %}
-            {{ t }}
-            {% endfor %}
-        </p>
+        <section class="article-tags">Tags:
+            {{ page.tags | array_to_sentence }}
+        </section>
         {% endif %}
     </header>
 

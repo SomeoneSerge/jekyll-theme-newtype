@@ -1,7 +1,7 @@
 <div class="row">
-    <h3><a class=""
+    <h3><a class="link-to-post"
            href="{{ post.url | absolute_url }}">
-        {{ post.title }}
+        {{ post.title | markdownify | remove_first: "<p>" | remove_last: "</p>" }}
     </a></h3>
     <span class="meta">{{ post.date | date_to_string }}</span>
     <p>
