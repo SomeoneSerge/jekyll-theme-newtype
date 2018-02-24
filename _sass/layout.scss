@@ -50,7 +50,7 @@
     grid-area: comments;
 }
 
-@media(max-width: 1000px) {
+@media(max-width: $tablet-width) {
     $left-margin: 2vw;
     $right-margin: 2vw;
 
@@ -105,7 +105,7 @@
     }
 }
 
-@media(min-width: 1000px) {
+@media(min-width: $tablet-width) {
     .site-container {
         margin-top: 0;
         margin-bottom: 0;
