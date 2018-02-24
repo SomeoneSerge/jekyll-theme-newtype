@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-newtype"
-  spec.version       = "0.1.3"
+  spec.version       = "0.1.4"
   spec.authors       = ["Serge Kozlukov"]
   spec.email         = ["newkozlukov@gmail.com"]
 
   spec.summary       = "A simplistic jekyll theme"
-  spec.homepage      = "https://newkozlukov.github.io/jekyll-theme-newtype/"
+  spec.homepage      = "https://newkozlukov.github.io/newkozlukov/jekyll-theme-newtype/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_sass|LICENSE|README)}i) }
