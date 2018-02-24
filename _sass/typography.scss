@@ -4,45 +4,97 @@
     @return $a + ($b - $a)*($sublevel - $i)/($sublevel - $suplevel);
 }
 
-@mixin font-by-level($i) {
-    @if($i <= $title-level) {
-        font-family: $title-font;
-        font-size: approx($subtitle-fontsize, $title-fontsize,
-                          $title-level, 0,
-                          $i);
-        font-weight: $title-fontweight;
-    } @elseif($i <= $subtitle-level) {
-        font-family: $subtitle-font;
-        font-size: approx($regular-fontsize, $subtitle-fontsize,
-                          $regular-level, $subtitle-level,
-                          $i);
-        font-weight: $subtitle-fontweight;
-    } @else {
-        font-family: $regular-font;
-        font-size: approx($regular-fontsize, $subtitle-fontsize,
-                          $regular-level, $subtitle-level,
-                          $i);
-        font-weight: $regular-fontweight;
+@mixin font-by-level($i, $levels, $fontsizes, $fontweights, $fontfamilies) {
+    $K: 0;
+    @for $k from 1 through length($levels) {
+        @if $i >= nth($levels, $k) {
+            $K: $k
+        }
     }
+    $alpha: 0;
+    $fs1: 0;
+    $fs2: 0;
+    @if $K < length($levels) {
+        $alpha: (nth($levels, $K + 1) - $i)/(nth($levels, $K + 1) - nth($levels, $K));
+        $fs1: nth($fontsizes, $K);
+        $fs2: nth($fontsizes, $K + 1);
+    } @else {
+        $alpha: 1;
+        $fs1: nth($fontsizes, $K);
+        $fs2: 0;
+    }
+    font-size: $alpha * $fs1 + (1 - $alpha) * $fs2;
+    font-weight: nth($fontweights, $K);
+    font-family: nth($fontfamilies, $K);
 }
 
+@mixin mobile-font-by-level($i) {
+    @include font-by-level($i, $levels,
+                           $mobile-fontsizes,
+                           $fontweights,
+                           $fontfamilies)
+}
+
+@mixin desktop-font-by-level($i) {
+    @include font-by-level($i, $levels,
+                           $desktop-fontsizes,
+                           $fontweights,
+                           $fontfamilies)
+}
 
 body {
-    font-family: $regular-font;
+    font-family: last($fontfamilies);
 }
 
-@for $i from 1 through $regular-level {
-    h#{$i} {
-        @include font-by-level($i)
+@media(max-width: $tablet-width) {
+    @for $i from 1 to last($levels) {
+        h#{$i} {
+            @include mobile-font-by-level($i);
+        }
+    }
+
+    p span {
+        @include mobile-font-by-level(last($levels));
+    }
+
+    strong {
+        @include mobile-font-by-level($strong-level);
+    }
+
+    .site-navigation > * {
+        color: $nav-forecolor;
+        @include mobile-font-by-level($navigation-level);
+    }
+
+    .site-title {
+        text-transform: uppercase;
+        @include mobile-font-by-level(0);
     }
 }
+@media(min-width: $tablet-width) {
+    @for $i from 1 to last($levels) {
+        h#{$i} {
+            @include desktop-font-by-level($i);
+        }
+    }
 
-p span {
-    @include font-by-level($regular-level);
-}
+    p span {
+        @include desktop-font-by-level(last($levels));
+    }
 
-strong {
-    @include font-by-level($strong-level);
+    strong {
+        @include desktop-font-by-level($strong-level);
+    }
+
+    .site-navigation > * {
+        color: $nav-forecolor;
+        @include desktop-font-by-level($navigation-level);
+    }
+
+    .site-title {
+        text-transform: uppercase;
+        @include desktop-font-by-level(0);
+    }
 }
 
 a {
@@ -54,14 +106,4 @@ a {
 .site-navigation {
     background-color: $nav-backcolor;
     color: $nav-forecolor;
-}
-
-.site-navigation > * {
-    color: $nav-forecolor;
-    @include font-by-level($navigation-level);
-}
-
-.site-title {
-    text-transform: uppercase;
-    @include font-by-level(0);
 }
