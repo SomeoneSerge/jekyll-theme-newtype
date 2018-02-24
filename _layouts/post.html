@@ -22,7 +22,7 @@ commentable: true
         {% endif %}
         {% if page.tags.size > 0 %}
         <section class="article-tags">Tags:
-            {{ page.tags | array_to_sentence }}
+            {{ page.tags | join: ", " }}
         </section>
         {% endif %}
     </header>
