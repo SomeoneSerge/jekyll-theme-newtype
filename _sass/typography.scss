@@ -63,6 +63,5 @@ a {
 
 .site-title {
     text-transform: uppercase;
-    text-decoration: none;
     @include font-by-level(0);
 }
