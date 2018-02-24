@@ -66,7 +66,7 @@
                                   minmax(2rem, min-content)
                                   minmax(2rem, min-content)
                                   minmax(2rem, auto)
-                                  minmax(8rem, min-content)
+                                  minmax(8rem, auto)
                                   minmax(2rem, auto);
         grid-template-areas:
             " site-logo           site-logo      site-logo"
@@ -118,7 +118,7 @@
                                 min-content
                                 minmax(2rem, min-content)
                                 minmax(2rem, auto)
-                                minmax(8rem, min-content)
+                                minmax(8rem, auto)
                                 minmax(2rem, auto);
         grid-template-areas:
             "  site-logo     site-logo     site-title        site-title    "
