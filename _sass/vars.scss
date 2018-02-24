@@ -1,0 +1,31 @@
+// Layout vars
+
+$page-width: 210mm;
+$logo-width: 65mm;
+$left-margin: 2cm;
+$right-margin: 2cm;
+$logo-title-margin: 1rem;
+
+// Typography vars
+
+$title-color: black;
+$regular-color: black;
+$title-font: "Inknut Antiqua", serif;
+$subtitle-font: "Inknut Antiqua", serif;
+$regular-font: "Roboto Slab", serif;
+$nav-backcolor: black;
+$nav-forecolor: white;
+
+$title-level: 1;
+$subtitle-level: 3;
+$regular-level: 10;
+
+$navigation-level: 8;
+$link-level: $regular-level - 1;
+$strong-level: $regular-level - 1;
+$regular-fontsize: 14pt;
+$subtitle-fontsize: 20pt;
+$title-fontsize: 36pt;
+$regular-fontweight: 400;
+$subtitle-fontweight: 500;
+$title-fontweight: 900;
