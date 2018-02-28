@@ -17,17 +17,19 @@ $nav-forecolor: white;
 $mobile-fontsize-scale: .4;
 
 $levels: 0, 1, 4, 10;
-$desktop-fontsizes: (42pt, 26pt, 20pt, 14pt);
-$mobile-fontsizes: (22pt, 16pt, 16pt, 12pt);
+$desktop-fontsizes: (42pt, 26pt, 16pt, 12pt);
+$mobile-fontsizes: (22pt, 16pt, 14pt, 12pt);
 $fontweights: (900, 700, 400, 400);
 
-@import url('https://fonts.googleapis.com/css?family=Cinzel|Vollkorn');
+@import url('https://fonts.googleapis.com/css?family=Cinzel:400,700,900|Vollkorn:400,600');
 
-$fontfamilies: (('Cinzel', serif), ('Cinzel', serif),
+$fontfamilies: ("Cinzel script=all rev=1",
+                "Cinzel script=all rev=1",
                 ('Vollkorn', serif), ('Vollkorn', serif));
 
 $navigation-level: 8;
-$strong-level: 9;
+$strong-level: 10;
+$strong-weight: 500;
 
 @function first($list) {
     @return nth($list, 1);

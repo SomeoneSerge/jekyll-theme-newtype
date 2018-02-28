@@ -51,7 +51,7 @@ body {
         }
     }
 
-    p span {
+    p, span {
         @include mobile-font-by-level(last($levels));
     }
 
@@ -76,7 +76,7 @@ body {
         }
     }
 
-    p span {
+    p, span {
         @include desktop-font-by-level(last($levels));
     }
 
@@ -108,4 +108,8 @@ a {
 
 .MathJax_Display, .MathJax_SVG_Display {
     overflow-x: auto;
+}
+
+strong {
+    font-weight: $strong-weight;
 }
