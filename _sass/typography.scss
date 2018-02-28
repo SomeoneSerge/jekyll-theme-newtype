@@ -69,6 +69,7 @@ body {
         @include mobile-font-by-level(0);
     }
 }
+
 @media(min-width: $tablet-width) {
     @for $i from 1 to last($levels) {
         h#{$i} {
