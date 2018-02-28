@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Inknut+Antiqua:500,900|Roboto+Slab');
-
 @function approx($a, $b, $sublevel, $suplevel, $i) {
     @return $a + ($b - $a)*($sublevel - $i)/($sublevel - $suplevel);
 }

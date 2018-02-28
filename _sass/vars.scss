@@ -17,10 +17,14 @@ $nav-forecolor: white;
 $mobile-fontsize-scale: .4;
 
 $levels: 0, 1, 4, 10;
-$desktop-fontsizes: (36pt, 26pt, 20pt, 14pt);
-$mobile-fontsizes: (18pt, 16pt, 16pt, 12pt);
-$fontweights: (900, 900, 500, 400);
-$fontfamilies: (("Inknut Antiqua", serif), ("Roboto Slab", serif), ("Roboto Slab", serif), ("Roboto Slab", serif));
+$desktop-fontsizes: (42pt, 26pt, 20pt, 14pt);
+$mobile-fontsizes: (22pt, 16pt, 16pt, 12pt);
+$fontweights: (900, 700, 400, 400);
+
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Vollkorn');
+
+$fontfamilies: (('Cinzel', serif), ('Cinzel', serif),
+                ('Vollkorn', serif), ('Vollkorn', serif));
 
 $navigation-level: 8;
 $strong-level: 9;
